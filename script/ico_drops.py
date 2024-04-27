@@ -17,14 +17,14 @@ print(df.head())
 # Print the column names to ensure the 'Country' column is present
 print(df.columns)
 
-# If 'Country' is indeed the column name, strip any potential leading/trailing spaces from column names
+# Strip any potential leading/trailing spaces from column names
 df.columns = df.columns.str.strip()
 
-# Now apply the function to the 'Country' column with the correct case
+# Apply the function to the 'Country' column with the correct case
 df['Country'] = df['Country'].apply(get_country_name)
 
 # Print the first few rows to verify the country names have been updated
 print(df.head())
 
-# Optionally, save the updated dataframe to a new CSV file
+# Save the updated dataframe to a new CSV file
 df.to_csv('Updated ICO drops - referring domains.csv', index=False)
